@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Journal Métropolitain</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .header {
+            background-color: #003366;
+            color: white;
+            padding: 15px 20px;
+            font-size: 24px;
+            font-weight: bold;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .header button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .header button:hover {
+            background-color: #0056b3;
+        }
+        .container {
+            width: 80%;
+            margin: 20px auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .auth-box {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            text-align: center;
+            width: 300px;
+            margin: auto;
+        }
+        .auth-box input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .auth-box button {
+            width: 100%;
+            padding: 10px;
+            background-color: #003366;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 18px;
+        }
+    </style>
+    <script>
+        function showLogin() {
+            document.querySelector('.main-content').style.display = 'none';
+            document.querySelector('.register-box').style.display = 'none';
+            document.querySelector('.login-box').style.display = 'block';
+        }
+
+        function showRegister() {
+            document.querySelector('.main-content').style.display = 'none';
+            document.querySelector('.login-box').style.display = 'none';
+            document.querySelector('.register-box').style.display = 'block';
+        }
+
+        function showArticles() {
+            document.querySelector('.login-box').style.display = 'none';
+            document.querySelector('.register-box').style.display = 'none';
+            document.querySelector('.main-content').style.display = 'block';
+        }
+    </script>
+</head>
+<body>
+    <div class="header">
+        <div>Journal Métropolitain</div>
+        <div>
+            <button onclick="showLogin()">Connexion</button>
+            <button onclick="showRegister()">Créer un compte</button>
+        </div>
+    </div>
+
+    <div class="auth-box login-box" style="display:none;">
+        <h3>Connexion</h3>
+        <input type="text" id="login-username" placeholder="Nom d'utilisateur">
+        <input type="password" id="login-password" placeholder="Mot de passe">
+        <button>Se connecter</button>
+        <p><a href="#" onclick="showRegister()">Créer un compte</a></p>
+    </div>
+
+    <div class="auth-box register-box" style="display:none;">
+        <h3>Créer un compte</h3>
+        <input type="text" id="register-username" placeholder="Nom d'utilisateur">
+        <input type="password" id="register-password" placeholder="Mot de passe">
+        <button>Créer un compte</button>
+        <p><a href="#" onclick="showLogin()">Vous avez déjà un compte ?</a></p>
+    </div>
+
+    <div class="main-content">
+        <div class="container">
+            <h2>Articles publiés</h2>
+            <p>Bienvenue sur le Journal Métropolitain. Découvrez les derniers articles !</p>
+        </div>
+    </div>
+</body>
+</html>
